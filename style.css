@@ -1,0 +1,1504 @@
+body {
+    font-family: "Roboto", sans-serif;
+    /* font-weight: 500; */
+
+    font-size: 12px;
+    color: #eee;
+    background-color: #000;
+
+    margin: 0;
+
+    overflow-y: hidden; /* hide page level scroll bar. */
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+div {
+    user-select: none;
+}
+
+.roboto-font-weight-500 {
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.roboto-400 {
+    font-family: "Roboto", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+  
+  
+.view-container {
+    margin: 0;
+    padding: 0;
+
+    /* pointer-events: none; */
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.view-overlay-container {
+    margin: 0;
+    padding: 0;
+
+    pointer-events: none;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.game-skill-toggle-container {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 50px;
+    width: 200px;
+
+    /* pointer-events: all; */
+
+    border: 2px solid red;
+}
+
+.game-canvas {
+    background-color: #000; 
+    z-index: -1;
+    outline: none;
+
+    /* pointer-events: all; */
+
+    /* Diable anti aliasing */
+    image-rendering: optimizeSpeed;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: -o-crisp-edges;
+    image-rendering: optimize-contrast;
+    -ms-interpolation-mode: nearest-neighbor;
+}
+
+.skill-tree-graph {
+    background-color: rgba(50, 50, 50, 0.5);
+    outline: none;
+
+    overflow: hidden;
+    
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+}
+
+.header-panel {
+    border: 2px solid #444;
+    font-size: 15px;
+    background-color: #111;
+    padding: 5px;
+    margin: 5px;
+}
+
+/********************************************************* 
+Active Skill Button
+*********************************************************/
+
+.icon-container {
+    width: 40px;
+    height: 40px;
+}
+
+.active-skills-panel {
+    position: absolute;
+    top: 71px;
+    left: 200px;
+    bottom: 61px;
+    width: 200px;
+
+    overflow: hidden;
+    display: flex;
+    flex-flow: column;    
+
+    pointer-events: none;
+}
+
+
+.automation-button-outer-active {
+    position: relative;
+    border: 2px solid #151;
+    border-radius: 5px;
+    margin: 5px;
+    /* background-color: #151; */
+    background-color: #111;
+    cursor: pointer;
+    font-size: 15px;
+
+    /* Explicitly accept pointer events because the parent div is set to pointer-events: none */
+    pointer-events: all;
+}
+.automation-button-outer-active:hover {
+    border: 2px solid #183;
+    background-color: #111;
+}
+.automation-button-outer-active:active {
+    position: relative;
+    top: 1px;
+}
+
+
+.automation-button-outer-not-active {
+    position: relative;
+    border: 2px solid #511;
+    border-radius: 5px;
+    margin: 5px;
+    background-color: #111;
+    cursor: pointer;
+    font-size: 15px;
+
+    /* Explicitly accept pointer events because the parent div is set to pointer-events: none */
+    pointer-events: all;
+}
+.automation-button-outer-not-active:hover {
+    border: 2px solid #813;
+    background-color: #111;
+}
+.automation-button-outer-not-active:active {
+    position: relative;
+    top: 1px;
+}
+
+.automation-progress-panel {
+    background-color: #131;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+
+    /* Explicitly accept pointer events because the parent div is set to pointer-events: none */
+    pointer-events: all;
+}
+
+.prestige-automation-criteria-progress-panel {
+    background-color: #311;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+
+    /* Explicitly accept pointer events because the parent div is set to pointer-events: none */
+    pointer-events: all;
+}
+
+
+
+
+
+.active-skill-button-outer {
+    position: relative;
+    border: 2px solid #17F;
+    border-radius: 5px;
+    margin: 5px;
+    background-color: #226;
+    cursor: pointer;
+    font-size: 15px;
+
+    /* Explicitly accept pointer events because the parent div is set to pointer-events: none */
+    pointer-events: all;
+}
+.active-skill-button-outer:hover {
+    border: 2px solid #17F;
+    background-color: #111;
+}
+.active-skill-button-outer:active {
+    position: relative;
+    top: 1px;
+}
+
+
+.active-skill-button-outer-active {
+    position: relative;
+    border: 2px solid #5D2;
+    border-radius: 5px;
+    margin: 5px;
+    background-color: #222;
+    font-size: 15px;
+
+    /* Explicitly accept pointer events because the parent div is set to pointer-events: none */
+    pointer-events: all;
+}
+.active-skill-button-outer-active:hover {
+    border: 2px solid #5F2;
+    background-color: #111;
+}
+
+
+.active-skill-button-outer-not-purchasable {
+    position: relative;
+    border: 2px solid #A44;
+    background-color: #222;
+    border-radius: 5px;
+    margin: 5px;
+    font-size: 15px;
+
+    /* Explicitly accept pointer events because the parent div is set to pointer-events: none */
+    pointer-events: all;
+}
+.active-skill-button-outer-not-purchasable:hover {
+    border: 2px solid #F88;
+    background-color: #111;
+}
+
+.active-skill-panel-activated {
+    background-color: #262;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+
+    /* Explicitly accept pointer events because the parent div is set to pointer-events: none */
+    pointer-events: all;
+}
+
+.active-skill-panel-cool-down {
+    background-color: #522;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+
+    /* Explicitly accept pointer events because the parent div is set to pointer-events: none */
+    pointer-events: all;
+}
+
+.active-skill-button-body {
+    padding: 5px;    
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+    grid-gap: 5px;
+
+    /* Make the button body (the contents) be above the activation/cooldown divs. */
+    position: relative;
+    z-index: 5;
+}
+
+.active-skill-title-description-container {
+    margin-left: 5px;
+}
+
+
+
+.primary-upgrade-panel {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 145px;
+    width: 355px;
+
+    overflow: hidden;
+    display: flex;
+    flex-flow: column;    
+}
+
+.primary-upgrade-panel-body {
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    flex: 1 1 auto;
+
+
+    /* Child upgrade buttons will need to specify "pointer-events: all;" or else they will not be clickable */
+    /* Disabling pointer events also disables the scroll bar, which is annoying. */
+    /* pointer-events: none; */
+}
+
+.upgrade-tab-menu-bar {
+    flex: 0 0 auto;
+    
+    pointer-events: all;
+
+    overflow: hidden; /* Need this because the contents are all floats */
+    display: flex; /* hack to remove whitespace gaps between menu items */
+}
+
+.upgrade-tab-menu-bar-fill-remaining {
+    overflow: hidden;
+    border-bottom: 2px solid #444;
+    width: 100%;
+}
+
+.upgrade-tab-menu-bar .upgrade-tab-menu-item {
+    width: auto;
+    border: none;
+    display: inline-block;
+    outline: 0;
+    color: #FFF;
+    background-color: transparent;
+
+    border-bottom: 2px solid #444;
+    border-top: 2px solid transparent;
+    border-left: 0px solid transparent;
+    border-right: 0px solid transparent;    
+}
+
+.upgrade-tab-menu-bar .upgrade-tab-menu-item-selected {
+    width:auto;
+    border:none;
+    display:inline-block;
+    outline:0;
+    color: #FFF;
+    background-color: transparent;
+
+    border-left: 2px solid #444;
+    border-top: 2px solid #444;
+    border-right: 2px solid #444;
+    top: 2px;
+    position: relative;    
+}
+
+.upgrade-tab-menu-bar .upgrade-tab-menu-item button {
+    font: inherit;
+    background-color: transparent;
+}
+
+.upgrade-tab-menu-contents {
+    padding: 5px;
+
+    position: absolute;
+    inset: 33px 0px 0px;
+    border: 0px;
+}
+
+
+.top-row {
+    position: absolute;
+    top: 0;
+    left: 200px;
+    right: 350px;
+    height: 130px;
+
+    /* padding changes the size of the panel */
+    padding: 0; 
+
+    overflow: hidden;
+
+    /* Child upgrade buttons will need to specify "pointer-events: all;" or else they will not be clickable */
+    pointer-events: none;
+}
+
+.top-row-panel {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 100px;
+}
+
+.top-row-one {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    /* height: 65px; */
+
+    /* text-align: center; */
+
+    padding: 0; 
+    overflow: hidden;
+
+    /* Child upgrade buttons will need to specify "pointer-events: all;" or else they will not be clickable */
+    pointer-events: none;
+}
+
+.top-row-two {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    left: 0;
+    /* height: 65px; */
+
+    /* text-align: center; */
+
+    padding: 0; 
+    overflow: hidden;
+
+    /* Child upgrade buttons will need to specify "pointer-events: all;" or else they will not be clickable */
+    pointer-events: none;
+}
+
+.bottom-row {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 200px;
+
+    /* height: 65px; */
+
+    height: 144px;
+
+    /* padding changes the size of the panel */
+    padding: 0; 
+
+    overflow: hidden;
+
+    /* Child upgrade buttons will need to specify "pointer-events: all;" or else they will not be clickable */
+    pointer-events: none;
+}
+
+.bottom-row-mine-control {
+    position: absolute;
+    bottom: 66px;
+    right: 0;
+    left: 0;
+    height: 70px;
+    text-align: center;
+
+    padding: 0; 
+    overflow: hidden;
+
+    /* Child upgrade buttons will need to specify "pointer-events: all;" or else they will not be clickable */
+    pointer-events: none;
+}
+
+.bottom-row-damage {
+    position: absolute;
+    bottom: 5px;
+    right: 0;
+    left: 0;
+    height: 65px;
+
+    text-align: center;
+
+    padding: 0; 
+    overflow: hidden;
+
+    /* Child upgrade buttons will need to specify "pointer-events: all;" or else they will not be clickable */
+    pointer-events: none;
+}
+
+
+.game-title-container {
+    position: relative;
+    bottom: 8px;
+    display: inline-block;
+    margin: 5px;
+}
+
+.game-title-body {
+    padding: 5px;
+}
+
+.game-title-display {
+    font-size: 26px;
+}
+
+.currency-container-view {
+    display: inline-block;
+
+    margin: 5px;
+
+    border: 2px solid #515;
+    border-radius: 5px;
+    background-color: #000A;
+
+    font-size: 15px;
+    pointer-events: none;
+}
+
+.currency-container-section {
+    display: inline-block;
+}
+
+.currency-container-body {
+    padding: 5px;    
+    display: grid;
+    grid-template-columns: 40px 95px;
+
+    position: relative;
+    z-index: 5;
+}
+
+.currency-panel-main-section {
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.currency-panel-value {
+    margin-top: 5px;
+}
+
+.currency-icon-view {
+    display: inline-block;
+}
+
+
+.ore-value-container {
+    position: absolute;
+    top: 13px;
+    /* right: 400px; */
+    left: 250px;
+}
+.gold-value-container {
+    position: absolute;
+    top: 13px;
+    right: 50px;
+}
+.prestige-value-container {
+    position: absolute;
+    top: 13px;
+    right: 400px;
+}
+
+.currency-value-display {
+    font-size: 26px;
+}
+
+
+.mine-status-container {
+    position: absolute;
+    /* left: 900px; */
+    right: 70px;
+    bottom: 13px;
+}
+
+.mine-control-panel {
+    display: inline-block;
+
+    border: 2px solid #050505;
+    border-radius: 5px;
+    background-color: #000A;
+
+    font-size: 16px;
+    pointer-events: none;
+}
+
+.mine-mode-button-outer-active {
+    display: inline-block;
+    width: 140px;
+    text-align: left;
+
+    border: 2px solid #151;
+    border-radius: 5px;
+    margin: 5px;
+    background-color: #1513;
+    cursor: pointer;
+
+    /* Explicitly accept pointer events because the parent div is set to pointer-events: none */
+    pointer-events: all;
+}
+.mine-mode-button-outer-active:hover {
+    border: 2px solid #183;
+    background-color: #111;
+}
+.mine-mode-button-outer-active:active {
+    position: relative;
+    top: 1px;
+}
+
+
+.mine-mode-button-outer-not-active {
+    display: inline-block;
+    width: 140px;
+    text-align: left;
+
+    border: 2px solid #511;
+    border-radius: 5px;
+    margin: 5px;
+    background-color: #5113;
+    cursor: pointer;
+
+    /* Explicitly accept pointer events because the parent div is set to pointer-events: none */
+    pointer-events: all;
+}
+.mine-mode-button-outer-not-active:hover {
+    border: 2px solid #813;
+    background-color: #111;
+}
+.mine-mode-button-outer-not-active:active {
+    position: relative;
+    top: 1px;
+}
+
+.mine-mode-button-row {
+    padding: 5px;    
+    display: grid;
+    grid-template-columns: 40px auto;
+    grid-gap: 5px;
+}
+
+
+
+.mine-damage-panel {
+    margin-top: 10px;
+
+    border: 2px solid #050505;
+    border-radius: 5px;
+    background-color: #000A;
+
+    font-size: 16px;
+    pointer-events: none;
+}
+
+.mine-damage-panel-main-section {
+    display: inline-block;
+    padding: 5px;
+}
+
+.mine-damage-panel-section-header {
+    /* font-size: 16px; */
+    text-align: center;
+}
+
+.mine-damage-panel-section-body {
+    /* font-size: 16px; */
+    text-align: center;
+}
+
+
+.mine-damage-panel-operator-section {
+    display: inline-block;
+    padding: 5px;
+}
+
+.max-depth-display {
+    font-size: 22px;
+    pointer-events: none;
+    margin-left:45px;
+}
+.max-layer-display {
+    font-size: 22px;
+    pointer-events: none;
+    margin-left:45px;
+}
+
+
+
+.bottom-row-button-container {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+}
+
+.center-on-character-button {
+    color: white;
+
+    width: 48px;
+    height: 48px;
+
+    cursor: pointer;
+    pointer-events: all;
+}
+
+.auto-play-button {
+    width: 100px;
+
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #66F;
+    color: white;
+    padding: 10px;
+
+    pointer-events: all;
+}
+
+/*******************************************************/
+/* MISC                                                */
+/*******************************************************/
+
+.link-item {
+    padding: 2px;
+}
+
+.link-anchor {
+    color: #EEE;
+}
+
+
+/*******************************************************/
+/* MENU                                                */
+/*******************************************************/
+
+.menu-closed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 600px;
+    /* height: 32px; */
+    z-index: 2;
+    transition-duration: 0.2s;
+}
+
+.menu-open {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 600px;
+    z-index: 2;
+    transition-duration: 0.2s;
+}
+
+.menu-header {
+    background-color: #34E;
+    position: absolute;
+    height: 32px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    cursor: pointer;
+}
+
+.menu-header:hover {
+    background-color: rgb(36, 36, 223);
+}
+
+.menu-open .menu-contents {
+    position: absolute;
+    visibility: visible;
+    bottom: 0;
+    left: 0;
+    top: 32px;
+    width: 100%;
+    background-color: #111E;
+}
+
+.menu-closed .menu-contents {
+    position: absolute;
+    overflow: hidden;
+    visibility: collapse;
+    bottom: 0;
+    left: 0;
+    top: 32px;
+    width: 100%;
+    background-color: #222;
+}
+
+/* .menu-contents-outer-container {
+    overflow:hidden;
+} */
+
+/* .menu-contents-inner-container {
+} */
+
+.menu-header-container {
+    padding: 10px;
+}
+
+.menu-header-title {
+    float: left;
+}
+
+.menu-header-mine-damage {
+    float: right;
+}
+
+.menu-header-money {
+    margin-right: 150px;
+    float: right;
+}
+
+.menu-header-experience {    
+    margin-right: 150px;
+    float: right;
+}
+
+/*******************************************************/
+/* STATISTICS POPUP                                    */
+/*******************************************************/
+
+.popup-container {
+    position: absolute;
+
+    /* top header row is 60px */
+    top: 71px;
+    bottom: 160px;
+
+    /* active skill panel on left extends 200+200px */
+    left: 401px;
+
+    /* primary upgrade panel on right is 350 px */
+    right: 351px;
+
+    font-size: 14px;
+
+    pointer-events: none;
+}
+
+.popup-window-save {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 500px;
+    z-index: 2;
+
+    border: 2px solid #17F;
+    border-radius: 5px;
+
+    pointer-events: all;    
+}
+
+.save-popup-buttons-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 5px;
+
+    padding: 5px;
+}
+
+.save-popup-content-container {
+    padding: 5px;
+}
+
+
+.save-popup-import-export-container {
+    /* border: 1px solid white; */
+    padding: 5px;
+}
+
+.import-export-textarea {
+    width: 400px;
+    height: 60px;
+    /* chrome inserts some whitespace below textarea. this gets rid fo that. */
+    /* vertical-align: top; */
+}
+
+.save-popup-button-row {
+    margin-top: 5px;
+    overflow: hidden;
+}
+
+
+.popup-window-statistics {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    z-index: 2;
+
+    border: 2px solid #17F;
+    border-radius: 5px;
+}
+
+.popup-window-close-skill-tree {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    z-index: 2;
+
+    width: 260px;
+}
+
+.stats-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 5px;
+    margin: 10px;
+}
+
+.stats-view {
+    width: 325px;
+}
+
+.stats-header {
+    background-color: #33A;
+    padding: 8px;
+}
+
+
+.popup-window-prestige {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 500px;
+    z-index: 2;
+
+    pointer-events: all;
+
+    border: 2px solid #17F;
+    border-radius: 5px;
+}
+
+.popup-window-header {
+    background-color: #226;
+    padding: 8px;
+
+    /* Explicitly accept pointer events because the parent div is set to pointer-events: none */
+    pointer-events: all;
+    cursor: pointer;
+}
+
+.popup-window-header:hover {
+    background-color: #55F;
+}
+
+.prestige-info {
+    padding: 10px;
+}
+
+.prestige-info:not(:first-child) {
+    margin-top: 10px;
+}
+
+.offline-info {
+    padding: 5px;
+}
+
+.offline-info:not(:first-child) {
+    margin-top: 10px;
+}
+
+/*******************************************************/
+/* TAB MENU BAR                                        */
+/*******************************************************/
+
+.tab-menu-bar {
+    overflow: hidden; /* Need this because the contents are all floats */
+    /* background-color: #336; */
+    /* border: none; */
+
+    border-bottom: 2px solid white;
+}
+
+.tab-menu-bar .tab-menu-item {
+    width:auto;
+    border:none;
+    display:inline-block;
+    outline:0;
+    color: #FFF;
+    background-color: transparent;
+}
+.tab-menu-bar .tab-menu-item:hover {
+    background-color: #111180;
+}
+
+.tab-menu-bar .tab-menu-item-selected {
+    /* padding:8px 16px; */
+    /* float:left; */
+    width:auto;
+    border:none;
+    display:inline-block;
+    outline:0;
+    color: #FFF;
+    background-color: #202073;
+}
+
+.tab-menu-bar .tab-menu-item button {
+    font: inherit
+}
+
+/* .tab-menu-contents {
+    padding: 5px;
+
+    position: absolute;
+    inset: 33px 0px 0px;
+    border: 0px;
+} */
+
+/*******************************************************/
+/* BUTTONS                                             */
+/*******************************************************/
+
+.game-button {
+    border: 1px solid #888;
+    padding: 10px;
+    cursor: pointer;
+    color: #FFF;
+}
+
+.game-button:hover {
+    border: 1px solid #888;
+    background-color: #333;
+    cursor: pointer;
+}
+
+.game-button:active {
+    position: relative;
+    top: 1px;
+    cursor: pointer;
+}
+
+.save-button {
+    float: left;
+    margin-left: 5px;
+    width: 50px;
+    text-align: center;
+}
+
+.prestige-button {
+    float: left;
+    margin-left: 5px;
+    width: 150px;
+    text-align: center;
+}
+
+.upgrade-purchase-button-value-container {
+    padding-left: 5px;
+    padding-top: 15px;
+}
+
+.upgrade-purchase-button {
+    text-align: center;
+}
+
+.upgrade-purchase-button-count {
+    float: right;
+}
+
+.skill-panel-outer {
+    border: 2px solid #222;
+    margin: 10px 5px 5px 5px;
+    font-size: 15px;
+    border-radius: 5px;
+
+    /* Explicitly accept pointer events because the parent div is set to pointer-events: none */
+    pointer-events: all;
+}
+
+.skill-panel-row1 {
+    padding: 5px;    
+    display: grid;
+    /* two cols: icon  text */
+    grid-template-columns: 1fr 6fr;
+    /* grid-gap: 5px; */
+
+    cursor: pointer;
+}
+
+.skill-panel-row1-title {
+    /* margin-top: 5px; */
+}
+.skill-panel-row2-description {
+    margin-top: 5px;
+}
+
+
+.purchase-count-button-container {    
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 5px;
+    margin: 5px;
+}
+
+.purchase-count-button {
+    border: 2px solid #17F;
+    background-color: #226;
+    cursor: pointer;
+    font-size: 15px;
+    border-radius: 5px;
+    text-align: center;
+    padding: 5px;
+
+    /* Explicitly accept pointer events because the parent div is set to pointer-events: none */
+    pointer-events: all;
+}
+.purchase-count-button:hover {
+    border: 2px solid #17F;
+    background-color: #111;
+    cursor: pointer;
+}
+.purchase-count-button:active {
+    /* position: relative; */
+    top: 1px;
+    cursor: pointer;
+}
+
+.purchase-count-button-selected {
+    border: 2px solid #A44;
+    background-color: #311;
+    font-size: 15px;
+    border-radius: 5px;
+    text-align: center;
+    padding: 5px;
+
+    /* Explicitly accept pointer events because the parent div is set to pointer-events: none */
+    pointer-events: all;
+}
+.purchase-count-button-selected:hover {
+    border: 2px solid #F88;
+    background-color: #111;
+}
+
+
+.skill-tree-button-outer {
+    position: absolute;
+    border: 2px solid #17F;
+    /* margin: 5px; */
+    background-color: #226;
+    cursor: pointer;
+    font-size: 15px;
+    border-radius: 5px;
+
+    padding: 5px;
+    width: 220px;
+
+    /* Explicitly accept pointer events because the parent div is set to pointer-events: none */
+    pointer-events: all;
+}
+.skill-tree-button-outer:hover {
+    border: 2px solid #17F;
+    background-color: #111;
+    cursor: pointer;
+}
+.skill-tree-button-outer:active {
+    position: relative;
+    top: 1px;
+    cursor: pointer;
+}
+
+
+.skill-tree-button-outer-purchased {
+    position: absolute;
+    border: 2px solid #5D2;
+    background-color: #262;
+    font-size: 15px;
+    border-radius: 5px;
+
+    padding: 5px;
+    width: 220px;
+
+    /* Explicitly accept pointer events because the parent div is set to pointer-events: none */
+    pointer-events: all;
+}
+.skill-tree-button-outer-purchased:hover {
+    border: 2px solid #5F2;
+    background-color: #111;
+}
+
+
+.skill-tree-button-outer-not-purchasable {
+    position: absolute;
+    border: 2px solid #A44;
+    background-color: #311;
+    /* margin: 5px; */
+    font-size: 15px;
+    border-radius: 5px;
+
+    padding: 5px;
+    width: 220px;
+
+    /* Explicitly accept pointer events because the parent div is set to pointer-events: none */
+    pointer-events: all;
+}
+.skill-tree-button-outer-not-purchasable:hover {
+    border: 2px solid #F88;
+    background-color: #111;
+    /* cursor: pointer; */
+}
+
+.skill-tree-button-row1 {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-gap: 5px;
+}
+
+.skill-tree-button-description {
+    margin-top: 5px;
+    /* margin-left: 5px; */
+}
+
+
+/*
+
+<div class="connection active" style="left: 123px; top: 123px; width: 120px; height: 2px; transform: rotate(90deg);>
+  <div class="connection-after" >
+  </div>
+</div>
+
+element {
+  left: 1740px;
+  top: 960px;
+  width: 120px;
+  height: 2px;
+  transform: rotate(90deg);
+}*/
+
+/* skill tree connections between nodes */
+.connection-vertical {
+    position: absolute;
+    /* background: #3498db; */
+    width: 2px;
+    height: 100px;
+    /* transform-origin: left center; */
+    background: #dfd;
+    /* More subtle connection line */
+    /* box-shadow: 0 0 5px rgba(74, 74, 74, 0.5); */
+    /* transition: background 0.25s ease; */
+  }
+
+  .connection-vertical.active {
+    background: #ffd700;
+    /* Golden/yellow color for active connections */
+    /* box-shadow: 0 0 5px rgba(255, 215, 0, 0.9); */
+  }  
+
+
+/* skill tree connections between nodes */
+.connection-horizontal {
+    position: absolute;
+    /* background: #3498db; */
+    height: 2px;
+    width: 250px;
+    /* transform-origin: left center; */
+    background: #dfd;
+    /* More subtle connection line */
+    /* box-shadow: 0 0 5px rgba(74, 74, 74, 0.5); */
+    /* transition: background 0.25s ease; */
+  }
+
+  .connection-horizontal.active {
+    background: #ffd700;
+    /* Golden/yellow color for active connections */
+    /* box-shadow: 0 0 5px rgba(255, 215, 0, 0.9); */
+  }  
+
+  /* The arrow */
+  .connection-after {
+    content: "";
+    position: absolute;
+    right: 35px;
+    /* This makes arrow slide up and down */
+    top: 44%;
+    transform: translateY(-49%);
+    width: 0;
+    height: 0;
+    border-left: 10px solid #4a4a4a;
+    /* Increased to 20px for larger arrow */
+    border-top: 5px solid transparent;
+    /* Increased to 10px for proportional width */
+    border-bottom: 5px solid transparent;
+    /* Increased to 10px for proportional width */
+    transition: border-left-color 0.25s ease;
+  }
+
+  .connection.active .connection-after {
+    border-left-color: #ffd700;
+  }
+
+  .connection.connection-hover .connection-after {
+    border-left-color: #ff4747;
+  }
+
+
+
+.upgrade-button-outer {
+    position: relative;
+    border: 2px solid #17F;
+    margin: 5px;
+    background-color: #226;
+    cursor: pointer;
+    font-size: 15px;
+    border-radius: 5px;
+
+    /* Explicitly accept pointer events because the parent div is set to pointer-events: none */
+    pointer-events: all;
+}
+.upgrade-button-outer:hover {
+    border: 2px solid #17F;
+    background-color: #111;
+    cursor: pointer;
+}
+.upgrade-button-outer:active {
+    position: relative;
+    top: 1px;
+    cursor: pointer;
+}
+
+.upgrade-button-outer-not-purchasable {
+    position: relative;
+    border: 2px solid #A44;
+    background-color: #311;
+    margin: 5px;
+    font-size: 15px;
+    border-radius: 5px;
+
+    /* Explicitly accept pointer events because the parent div is set to pointer-events: none */
+    pointer-events: all;
+}
+.upgrade-button-outer-not-purchasable:hover {
+    border: 2px solid #F88;
+    background-color: #111;
+    /* cursor: pointer; */
+}
+
+.popup-toggle-button-outer-open {
+    position: relative;
+    border: 2px solid #A0A;
+    background-color: #303;
+    margin: 5px;
+    font-size: 15px;
+    border-radius: 5px;
+
+    /* Explicitly accept pointer events because the parent div is set to pointer-events: none */
+    pointer-events: all;
+}
+.popup-toggle-button-outer-open:hover {
+    border: 2px solid #808;
+    background-color: #111;
+}
+
+
+.terrain-layer-progress-outer {
+    display: inline-block;
+    position: relative;
+
+    border: 2px solid #444;
+    background-color: #000A;
+    margin: 5px;
+    font-size: 15px;
+    border-radius: 5px;
+
+    width: 330px;
+
+    /* Explicitly accept pointer events because the parent div is set to pointer-events: none */
+    pointer-events: all;
+}
+
+
+/* Progress bar for terrain layer progress */
+.terrain-layer-progress-slider {
+    background-color: #4B006E;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+}
+
+
+.mined-upgrade-button-body {
+    padding: 5px;    
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+
+    position: relative;
+    z-index: 5;
+}
+
+.mined-upgrade-title-description-container {
+    margin-left: 5px;
+}
+
+.mined-upgrade-button-title-single-row {
+    margin-top: 12px;
+}
+.mined-upgrade-button-title-double-row {
+    /* margin-top: 5px; */
+}
+
+
+.mined-upgrade-button-description {
+    margin-top: 5px;
+}
+
+.pick-upgrade-button-row1 {
+    padding: 5px;    
+    display: grid;
+    /* three cols: icon  text  cost */
+    grid-template-columns: 1fr 5fr 3fr;
+    grid-gap: 5px;
+}
+
+.pick-upgrade-button-row2 {
+    /* border: 1px solid #444; */
+    padding: 5px;
+
+    display: grid;
+    grid-template-columns: 3fr 3fr;
+    grid-gap: 5px;    
+}
+
+.pick-upgrade-title-description-container {
+    margin-left: 5px;
+}
+
+.pick-upgrade-button-title-single-row {
+    margin-top: 12px;
+}
+.pick-upgrade-button-title-double-row {
+    margin-top: 5px;
+}
+
+
+.pick-upgrade-button-description {
+    margin-top: 5px;
+}
+
+.pick-upgrade-icon {
+    display: block;
+}
+
+.pick-upgrade-count {
+    text-align: right;
+    /* margin-top: 5px; */
+}
+
+.pick-upgrade-cost {
+    text-align: right;
+    margin-top: 5px;
+}
+
+
+.upgrade-collection-panel {
+    /* scroll-behavior: auto; */
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    /* new */
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    top: 0px;
+  }
+
+
+/*******************************************************/
+/* SECTION                                             */
+/*******************************************************/
+
+.menu-section {
+    border: 1px solid #444;
+}
+
+/* .menu-section-header {
+    background-color: #444;
+    padding: 8px;
+} */
+
+.menu-section-body {
+    padding: 8px;
+}
+
+/*******************************************************/
+/* NUMBERS SECTION                                     */
+/*******************************************************/
+
+.numbers-section-row {
+    /* overflow:hidden; */
+    /* padding-bottom: 1px; */
+    margin-bottom: 1px;
+}
+.numbers-section-label {
+    display: inline-block;
+    text-align: left;
+    /* float:left; */
+}
+.numbers-section-value {
+    text-align: right;
+    float:right;
+}
+.numbers-section-unit {
+    text-align: left;
+    margin-left: 5px;
+    width: 50px;
+    float:right;
+}
