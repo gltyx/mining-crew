@@ -458,7 +458,7 @@ var cnPrefix = {
     "Missiles + ": "导弹 + ",
     "Blue Green Clay": "蓝绿粘土",
     "Red Clay": "红黏土",
-    "": "",
+    "Grey Sandstone": "绿砂岩",
     "": "",
     "": "",
     "": "",
