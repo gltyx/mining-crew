@@ -813,6 +813,18 @@ Active Skill Button
     float: right;
 }
 
+.performance-row {
+    display: grid;
+    grid-template-columns: 130px 80px 80px 80px;
+    grid-gap: 0;
+}
+.performance-value {
+    width: 80px;
+    text-align: right;
+    /* border: 1px solid #444; */
+}
+
+
 /*******************************************************/
 /* STATISTICS POPUP                                    */
 /*******************************************************/
@@ -919,7 +931,7 @@ Active Skill Button
     position: absolute;
     bottom: 0px;
     left: 0px;
-    width: 500px;
+    width: 400px;
     z-index: 2;
 
     pointer-events: all;
@@ -1399,6 +1411,14 @@ element {
     margin-top: 5px;
 }
 
+.button-row-icon-text {
+    padding: 5px;    
+    display: grid;
+    grid-template-columns: 40px auto;
+    grid-gap: 5px;
+}
+
+
 .pick-upgrade-button-row1 {
     padding: 5px;    
     display: grid;
@@ -1459,6 +1479,8 @@ element {
     bottom: 0px;
     top: 0px;
   }
+
+
 
 
 /*******************************************************/
