@@ -473,7 +473,7 @@ var cnPrefix = {
     "Blue Dunite": "蓝色暗岩",
     "Deficient Hematite": "贫赤铁矿",
     "Blue Sandstone": "蓝色砂岩",
-    "": "",
+    "Layer Clear Countdown: ": "图层清除倒计时：",
     "": "",
     "": "",
     "": "",
