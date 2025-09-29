@@ -1344,6 +1344,83 @@ element {
     /* cursor: pointer; */
 }
 
+
+
+.settings-row-outer {
+    position: relative;
+    border: 2px solid #17F;
+    margin: 5px;
+    padding: 5px;
+    background-color: #226;
+    /* cursor: pointer; */
+    font-size: 15px;
+    border-radius: 5px;
+
+    /* Explicitly accept pointer events because the parent div is set to pointer-events: none */
+    pointer-events: all;
+}
+
+
+.settings-row-fps-throttle {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    /* grid-gap: 5px; */
+}
+
+
+.settings-row-toggle-button {
+    position: relative;
+    border: 2px solid #F17;
+    margin: 5px;
+    padding: 5px;
+    background-color: #622;
+    cursor: pointer;
+    font-size: 15px;
+    border-radius: 5px;
+
+    text-align: center;
+
+    /* Explicitly accept pointer events because the parent div is set to pointer-events: none */
+    pointer-events: all;
+}
+.settings-row-toggle-button:hover {
+    border: 2px solid #F17;
+    background-color: #111;
+    cursor: pointer;
+}
+.settings-row-toggle-button:active {
+    position: relative;
+    top: 1px;
+    cursor: pointer;
+}
+
+.settings-row-toggle-button-selected {
+    position: relative;
+    border: 2px solid #4A4;
+    background-color: #131;
+    margin: 5px;
+    padding: 5px;
+    font-size: 15px;
+    border-radius: 5px;
+
+    text-align: center;
+
+    /* Explicitly accept pointer events because the parent div is set to pointer-events: none */
+    pointer-events: all;
+}
+.settings-row-toggle-button-selected:hover {
+    border: 2px solid #8F8;
+    background-color: #111;
+    /* cursor: pointer; */
+}
+
+
+
+
+
+
+
+
 .popup-toggle-button-outer-open {
     position: relative;
     border: 2px solid #A0A;
