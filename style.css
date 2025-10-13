@@ -304,14 +304,17 @@ Active Skill Button
     top: 0;
     right: 0;
     bottom: 145px;
-    width: 355px;
+    width: 380px;
 
+    pointer-events: all;
+    
     overflow: hidden;
     display: flex;
     flex-flow: column;    
 }
 
 .primary-upgrade-panel-body {
+    display: none;
     overflow-y: auto;
     overflow-x: hidden;
 
@@ -523,7 +526,7 @@ Active Skill Button
 .currency-container-body {
     padding: 5px;    
     display: grid;
-    grid-template-columns: 40px 95px;
+    grid-template-columns: 40px 75px;
 
     position: relative;
     z-index: 5;
@@ -634,7 +637,7 @@ Active Skill Button
     padding: 5px;    
     display: grid;
     grid-template-columns: 40px auto;
-    grid-gap: 5px;
+    /* grid-gap: 5px; */
 }
 
 
@@ -857,6 +860,8 @@ Active Skill Button
     border: 2px solid #17F;
     border-radius: 5px;
 
+    display: none;
+
     pointer-events: all;
 }
 
@@ -898,6 +903,8 @@ Active Skill Button
 
     width: 500px;
 
+    display: none;
+
     background-color: #000C;
 
     border: 2px solid #17F;
@@ -933,6 +940,8 @@ Active Skill Button
     bottom: 0px;
     left: 0px;
     z-index: 2;
+
+    display: none;
 
     background-color: #000C;
 
@@ -972,6 +981,8 @@ Active Skill Button
     left: 0px;
     width: 400px;
     z-index: 2;
+
+    display: none;
 
     pointer-events: all;
     background-color: #000C;
@@ -1111,6 +1122,20 @@ Active Skill Button
     font-size: 15px;
     border-radius: 5px;
 
+    background-color: #000D;
+
+    /* Explicitly accept pointer events because the parent div is set to pointer-events: none */
+    pointer-events: all;
+}
+
+.skill-panel-outer-purchaseable {
+    border: 2px solid #17F;
+    margin: 10px 5px 5px 5px;
+    font-size: 15px;
+    border-radius: 5px;
+
+    background-color: #000D;
+
     /* Explicitly accept pointer events because the parent div is set to pointer-events: none */
     pointer-events: all;
 }
@@ -1119,8 +1144,9 @@ Active Skill Button
     padding: 5px;    
     display: grid;
     /* two cols: icon  text */
-    grid-template-columns: 1fr 6fr;
-    /* grid-gap: 5px; */
+    /* grid-template-columns: 1fr 6fr; */
+    grid-template-columns: 40px auto;
+    grid-gap: 5px;
 
     cursor: pointer;
 }
@@ -1501,12 +1527,24 @@ element {
     bottom: 0;
 }
 
+.mined-upgrade-progress-panel {
+    background-color: #002;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+
+    /* Explicitly accept pointer events because the parent div is set to pointer-events: none */
+    pointer-events: all;
+}
+
 
 .mined-upgrade-button-body {
     padding: 5px;    
     display: grid;
     grid-template-columns: 1fr 6fr;
 
+    /* Make the button body (the contents) be above the activation/cooldown divs. */
     position: relative;
     z-index: 5;
 }
@@ -1519,7 +1557,6 @@ element {
     margin-top: 12px;
 }
 .mined-upgrade-button-title-double-row {
-    /* margin-top: 5px; */
 }
 
 
@@ -1531,7 +1568,7 @@ element {
     padding: 5px;    
     display: grid;
     grid-template-columns: 40px auto;
-    grid-gap: 5px;
+    /* grid-gap: 5px; */
 }
 
 
@@ -1540,7 +1577,7 @@ element {
     display: grid;
     /* three cols: icon  text  cost */
     grid-template-columns: 1fr 5fr 3fr;
-    grid-gap: 5px;
+    /* grid-gap: 5px; */
 }
 
 .pick-upgrade-button-row2 {
@@ -1559,9 +1596,8 @@ element {
 .pick-upgrade-button-title-single-row {
     margin-top: 12px;
 }
-.pick-upgrade-button-title-double-row {
-    margin-top: 5px;
-}
+/* .pick-upgrade-button-title-double-row {
+} */
 
 
 .pick-upgrade-button-description {
