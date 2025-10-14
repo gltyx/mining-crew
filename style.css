@@ -1542,7 +1542,10 @@ element {
 .mined-upgrade-button-body {
     padding: 5px;    
     display: grid;
-    grid-template-columns: 1fr 6fr;
+    /* grid-template-columns: 1fr 6fr; */
+    grid-template-columns: 40px auto;
+    /* grid-gap: 5px; */
+
 
     /* Make the button body (the contents) be above the activation/cooldown divs. */
     position: relative;
