@@ -1556,12 +1556,9 @@ element {
     margin-left: 5px;
 }
 
-.mined-upgrade-button-title-single-row {
+.upgrade-button-title-single-row {
     margin-top: 12px;
 }
-.mined-upgrade-button-title-double-row {
-}
-
 
 .mined-upgrade-button-description {
     margin-top: 5px;
