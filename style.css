@@ -2,7 +2,7 @@ body {
     font-family: "Roboto", sans-serif;
     /* font-weight: 500; */
 
-    font-size: 12px;
+    font-size: 15px;
     color: #eee;
     background-color: #000;
 
@@ -526,7 +526,9 @@ Active Skill Button
 .currency-container-body {
     padding: 5px;    
     display: grid;
-    grid-template-columns: 40px 75px;
+    /* grid-template-columns: 40px 75px; */
+    /* grid-template-columns: 40px auto; */
+    grid-template-columns: 40px 65px;
 
     position: relative;
     z-index: 5;
@@ -582,7 +584,7 @@ Active Skill Button
     border-radius: 5px;
     background-color: #000A;
 
-    font-size: 16px;
+    font-size: 15px;
     pointer-events: none;
 }
 
@@ -649,7 +651,7 @@ Active Skill Button
     border-radius: 5px;
     background-color: #000A;
 
-    font-size: 16px;
+    font-size: 15px;
     pointer-events: none;
 }
 
@@ -659,19 +661,17 @@ Active Skill Button
 }
 
 .mine-damage-panel-section-header {
-    /* font-size: 16px; */
     text-align: center;
 }
 
 .mine-damage-panel-section-body {
-    /* font-size: 16px; */
     text-align: center;
 }
 
 
 .mine-damage-panel-operator-section {
     display: inline-block;
-    padding: 5px;
+    padding: 2px;
 }
 
 .max-depth-display {
@@ -1012,11 +1012,11 @@ Active Skill Button
 }
 
 .offline-info {
-    padding: 5px;
+    padding: 3px;
 }
 
 .offline-info:not(:first-child) {
-    margin-top: 10px;
+    margin-top: 5px;
 }
 
 /*******************************************************/
